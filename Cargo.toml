@@ -1,0 +1,20 @@
+[package]
+name = "ruzy"
+description = "A Lua library for fuzzy search"
+version = "0.1.0"
+authors = ["pierre <dommerc.pierre@gmail.com>"]
+edition = "2021"
+license = "MPL-2.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+fuzzy-matcher = "0.3"
+mlua = { version = "0.8", features = ["luajit", "vendored", "module", "macros"] }
+once_cell = "1.17"
+
+[profile.release]
+strip = true
+opt-level = "s"
+lto = true
