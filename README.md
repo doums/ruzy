@@ -6,19 +6,16 @@
 
 The library exposes a Lua module with one function:
 
-#### fuzzy (input: `string`, items: `list`<`string`>)\
-
-returns: `list`<{\
-            item: `string`,\
-            score: `number`,\
-            indexes: `list`<`number`>\
-         }>
+#### fuzzy (input: `string`, items: `list<string>`)
 
 `fuzzy` function takes 2 arguments. The first is the search
 input, the second is the list of string to fuzzy match.
 
-The function returns the list of filtered matching items with
-corresponding score and matching indexes, sorted by score.
+returns a list of the matching items sorted by score. Each
+item includes:
+- item: `string`
+- score: `number`, fuzzy score
+- indexes: `list<number>`, the matching indexes
 
 ### Usage
 
@@ -30,9 +27,9 @@ from Lua code.
   local res = fuzzy('lou', { 'pierre', 'et', 'le', 'loup' })
   -- res:
   -- { {
-  --     indexes = { 0, 1, 2 },
   --     item = "loup",
-  --     score = 71
+  --     score = 71,
+  --     indexes = { 0, 1, 2 }
   -- } }
 ```
 
