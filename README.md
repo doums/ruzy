@@ -20,11 +20,11 @@ item includes:
 
 ### Usage
 
-Move the `ruzy.so` shared library in your project and import it
-from Lua code.
+Move the `libruzy.so` shared library (latest [release](https://github.com/doums/ruzy/releases/latest))
+in your project and import it from Lua code.
 
 ```lua
-  local fuzzy = require('ruzy').fuzzy
+  local fuzzy = require('libruzy').fuzzy
   local res = fuzzy('lou', { 'pierre', 'et', 'le', 'loup' })
   -- res:
   -- { {
@@ -37,6 +37,18 @@ from Lua code.
 ### Algorithm
 
 Skim V2
+
+### Build
+
+#### prerequisites:
+
+- [rust](https://www.rust-lang.org/tools/install)
+
+To build for production run
+
+```
+cargo build --release
+```
 
 ### Credits
 
