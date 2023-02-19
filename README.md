@@ -41,6 +41,7 @@ Skim V2
 ### Credits
 
 https://crates.io/crates/fuzzy-matcher
+https://github.com/khvzak/mlua
 
 ### License
 
